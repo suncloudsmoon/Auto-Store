@@ -1,6 +1,6 @@
 # Auto-Store
 Auto-Save helps you save/retrieve variables (and data structures) to/from file with minimal effort. 
-For example, you only need to overload the << and >> operator(s) for ostream to serialize/deserialize a struct to file.
+For example, you only need to overload the << and >> operator(s) for ostream to serialize/deserialize a struct.
 ```
 struct Data {};
 friend ostream& operator<<(ostream &o, const Data &s);
