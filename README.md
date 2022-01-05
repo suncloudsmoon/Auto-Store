@@ -40,6 +40,12 @@ struct Game {
 	}
 	void operator=(Game&& g) noexcept = delete; // typically used for efficiency
 };
+
+void serialize_struct_example() {
+	au::auto_store<Game> g{ Game(), "game.txt" };
+	(*g).health++;
+	(*g).score++;
+}
 ```
 More examples can be found in ```main.cpp```.
 
