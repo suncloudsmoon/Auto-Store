@@ -1,5 +1,5 @@
 # Auto-Store
-Auto-Save helps you save variables (and data structures) to file with minimal effort. 
+Auto-Save helps you save/retrieve variables (and data structures) to/from file with minimal effort. 
 For example, you only need to overload the << and >> operator(s) for ostream to serialize a struct to file.
 ```
 struct Data {};
