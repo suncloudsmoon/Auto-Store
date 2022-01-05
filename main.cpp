@@ -18,18 +18,32 @@
  */
 
 #include <iostream>
+#include <climits>
 
 #include "autostore.hpp"
 
-void test_auto_store();
+void game_score_example();
+void random_num_example();
 
 int main() {
-	test_auto_store();
+	// game_score_example();
+	random_num_example();
 }
 
-void test_auto_store() {
+void game_score_example() {
 	au::auto_store<unsigned int> game_score{ 0, "game_score.txt" };
 	std::cout << "Game score: " << game_score << std::endl;
 	std::cout << "Enter a random number: ";
 	std::cin >> game_score;
+}
+
+void random_num_example() {
+	std::function<unsigned long()> rand_func = [&]() -> unsigned long {
+		// LCG -> (a*X + c) % m
+		static unsigned long a = 1103515245, x = 100, c = 12345, m = INT_MAX;
+		x = (a * x + c) % m;
+		return x;
+	};
+	au::auto_store<unsigned int> something{ 0, rand_func };
+	(*something)++;
 }
